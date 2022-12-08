@@ -6,24 +6,26 @@ var createError = require("http-errors");
 var express = require("express");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
+var cors = require("cors");
 
 var indexRouter = require("./routes/index");
-// var companiesRouter = require("./routes/companies");
+var authRouter = require("./routes/auth");
 
 var app = express();
 
 const { baseClient, dbClient } = require("./db");
-const { company_table } = require("./schemas");
+const { user } = require("./schemas");
 
 // middlewares
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(cors());
 
 // routes
 app.use("/api", indexRouter);
-// app.use("/companies", companiesRouter);
+app.use("/api/auth", authRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
@@ -66,11 +68,11 @@ async function initDB() {
     }
     try {
         await dbClient.connect();
-        
+
         console.log(`✅ connection to db ${process.env.PGDB}`);
 
         const companyQuery = await dbClient.query(
-            `CREATE TABLE IF NOT EXISTS ${process.env.PGTABLE} (${company_table});`
+            `CREATE TABLE IF NOT EXISTS ${process.env.PGTABLE} (${user});`
         );
 
         if (companyQuery.rowCount >= 0) {
@@ -84,5 +86,4 @@ async function initDB() {
 }
 
 initDB();
-
 module.exports = app;

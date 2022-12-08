@@ -1,8 +1,10 @@
-const company_table = `            
+const user = `            
   "id" SERIAL,
-  "name" VARCHAR(256) NOT NULL,
-  "cin" VARCHAR(21) UNIQUE NOT NULL,
-  PRIMARY KEY ("id") 
+  "userdata" TEXT,
+  "subscriptions" TEXT[],
+  "email" TEXT,
+  PRIMARY KEY ("id")
+
 `;
 
-module.exports = { company_table };
+module.exports = { user };

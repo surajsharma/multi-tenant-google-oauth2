@@ -1,35 +1,79 @@
-.App {
-    font-family: sans-serif;
-    text-align: center;
+body {
+    padding: 20px;
+}
+.center {
+    display: flex;
+    height: 50vh;
+    justify-content: center;
+    align-items: center;
 }
 
-.mt-6 {
-    margin-top: 220px !important;
+button {
+    border: 0;
+    border: 1px solid gray;
+    margin: 5px;
+    color: black;
+}
+
+button:hover {
+    background-color: black;
+    color: white;
+}
+
+a {
+    border-bottom: 1px solid blue;
+}
+
+a:hover {
+    background-color: blue;
+    color: #e4e4e4 !important;
+    cursor: pointer;
+}
+
+.add-sheet-toolbar {
     position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100vw;
+    border-top: 2px solid royalblue;
+    background-color: #e4e4e4;
+}
+
+.cascading-dropdowns {
+    display: flex;
+    flex-direction: column;
 }
 
 table {
-    border: 1px solid lightgray;
-    width: 90vw;
-    margin-bottom: 20px;
+    width: 100%;
 }
 
-tbody {
-    border-bottom: 1px solid lightgray;
+table tr:nth-child(even) {
+    color: #555;
+    background-color: #ffffdd;
 }
 
-th {
-    border-bottom: 1px solid lightgray;
-    border-right: 1px solid lightgray;
-    padding: 2px 4px;
-    background-color: rgb(190, 48, 190);
-    color: wheat;
+table tr td:nth-child(3) {
+    text-align: center;
 }
 
-.thName:hover {
-    background-color: rgb(88, 1, 88);
+table tr th {
+    color: brown;
+    padding: 5px;
 }
 
-tr:hover {
-    background-color: lightblue;
+table tr th:nth-child(3) {
+    text-align: center;
+}
+
+.watched-table {
+    height: 55vh;
+    width: 100%;
+    overflow-x: scroll;
+    padding: 5px;
+    border: 1px dashed gray;
 }

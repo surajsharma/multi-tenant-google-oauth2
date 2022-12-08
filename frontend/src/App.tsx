@@ -1,20 +1,23 @@
-import { GoogleApiProvider } from 'react-gapi'
-
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import AutoComplete from "./Components/AutoComplete";
-import Table from "./Components/Table";
+
+import { Auth } from "./Components/AuthContext";
+
+import SignUp from "./Components/Signup";
+import Dashboard from "./Components/Dashboard";
+import Subscriptions from "./Components/Subscriptions";
+import React from "react";
 
 export default function App() {
     return (
-        <GoogleApiProvider clientId={"780707646972-84u3voauonu5f7bs181ho0dl74955u49.apps.googleusercontent.com"}>
+        <Auth>
             <Router>
-                <div className="d-flex flex-column justify-content-md-center align-items-center vh-100">
-                    <Routes>
-                        <Route path="/" element={<AutoComplete />} />
-                        <Route path="/table" element={<Table />} />
-                    </Routes>
-                </div>
+                <Routes>
+                    <Route path="/" element={<SignUp />} />
+                    <Route path="/login" element={<SignUp />} />
+                    <Route path="/subscriptions" element={<Subscriptions />} />
+                    <Route path="/dashboard" element={<Dashboard />} />
+                </Routes>
             </Router>
-        </GoogleApiProvider>
+        </Auth>
     );
 }
