@@ -16,4 +16,6 @@
 
 -   login/signup is handled by single route
 -   frontend is served at `http://localhost:5173`
--   .env files are [backend](https://pastebin.com/raw/ESzaGRKq) [frontend](https://pastebin.com/raw/pzG4HauE)
+-   .env files 
+    - [backend](https://pastebin.com/raw/ESzaGRKq) 
+    - [frontend](https://pastebin.com/raw/pzG4HauE)
