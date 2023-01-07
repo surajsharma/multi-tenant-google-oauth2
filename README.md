@@ -1,5 +1,3 @@
-[Weeklong Challenge](https://cliffdotai.notion.site/Junior-Front-End-Engineer-ReactJS-eeb8540ecae04495be68c30cb10de37b)
-
 ## 🐳 Run With Docker
 
 -   run `docker-compose up` in the root directory
